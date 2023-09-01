@@ -1,0 +1,390 @@
+:root {
+    /* Colors */
+    --slide-background-color: #003366;
+    --slide-text-color: #FFFFFF;
+    --body-background-color: #FFFFFF;
+    --dangerous-text-color: #FFD700;
+
+    /* Layout */
+    --header-height: 90px;
+    /* Define the height of the header */
+    --footer-height: 18px;
+    /* Define the height of the footer */
+    --screen-height: calc(100vh - var(--header-height) - var(--footer-height));
+    --slide-height: calc(var(--screen-height) - 85px);
+}
+
+html {
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    overflow: hidden;
+    /* Hide scrollbars */
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    padding-bottom: 20px;
+    /* Footer height */
+    background-color: var(--body-background-color);
+}
+
+#progressBar {
+    position: absolute;
+    top:var(--header-height);
+    width: 100%;
+    height: 10px;
+    background-color: var(--dangerous-text-color);
+    z-index: 9;
+}
+
+#logo {
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    background-image: url("../images/ETML.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-width: 150px;
+    min-height: 100px;
+    z-index: 9;
+}
+
+header {
+    height: var(--header-height);
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: var(--footer-height);
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    color: var(--slide-background-color);
+    background-color: var(--body-background-color);
+}
+
+hr {
+    position: absolute;
+    left: 0;
+    top: var(--header-height);
+    width: 100vw;
+    height: 2px;
+    /* Ajustez la hauteur de la ligne horizontale */
+    background-color: white;
+    /* Couleur de la ligne horizontale */
+    border: none;
+    /* Supprimez la bordure par défaut */
+    z-index: 9;
+}
+
+/*#region: goToSlide*/
+#goToSlide {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    z-index: 9;
+}
+
+#goToSlide input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+#goToSlide button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#goToSlide button:hover {
+    background-color: #45a049;
+}
+
+
+/*#endregion: goToSlide*/
+
+/*#region: Vidéo */
+
+video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*#endregion: Vidéo */
+
+/*#region: Titres */
+
+/* Style pour le titre principal */
+h1 {
+    font-size: 50px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+/* Style pour le sous-titre */
+h2 {
+    font-size: 40px;
+    margin: 5px 0 8px;
+    /* Raccourci pour définir les marges supérieure, latérale et inférieure */
+}
+
+/* Style pour le sous-sous-titre */
+h3 {
+    font-size: 35px;
+    margin: 5px 0;
+    /* Raccourci pour définir les marges supérieure et inférieure */
+}
+
+/*#endregion : Titres */
+
+/*#region: Slides */
+
+/* Style général pour les slides */
+.slide {
+    display: none;
+    position: relative;
+    margin: 0 auto;
+    width: 85%;
+    height: var(--slide-height);
+    background-color: var(--slide-background-color);
+    color: var(--slide-text-color);
+    align-items: center;
+    justify-content: center; 
+    padding: 20px;
+}
+
+
+/* Style pour le centrage des slides */
+.center-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--dangerous-text-color);
+}
+
+/* Style pour le texte dans les slides */
+.slide p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 5px;
+    word-break: normal;
+    overflow-wrap: normal;
+}
+
+/* Style pour les listes numériques dans les slides */
+.slide ul.numerique {
+    list-style: decimal;
+    margin-left: 15px;
+}
+
+/* Style pour les liens dans les slides */
+.slide a {
+    color: var(--slide-text-color);
+    font-size: xx-large;
+    text-align: center;
+}
+
+/* Style pour les listes non ordonnées dans les slides */
+.slide ul {
+    list-style-type: circle;
+    padding-left: 35px;
+}
+
+/* Style pour les éléments de liste dans les slides */
+.slide ul li {
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 25px;
+    line-height: 1.5;
+}
+
+/* Style pour les images dans les slides */
+.slide img {
+    align-items: center;
+    min-width: 200px;
+    max-height: calc(var(--screen-height) - 80px );
+    margin-bottom: 10px; 
+    margin-top: 10px;
+  }
+
+/*#endregion: Slides */
+
+/*#region: Spécialisations */
+.container {
+    display: flex;
+}
+
+/* Style pour les colonnes gauche et droite */
+.col-l {
+    float: left;
+    width: 50%;
+}
+
+.col-r {
+    float: right;
+    width: 50%;
+}
+
+/* Style spécifique pour les listes dans les colonnes gauche et droite */
+.slide .col-l ul li,
+.slide .col-r ul li {
+    font-size: large;
+}
+
+/* Style pour le survol des listes dans les colonnes gauche et droite */
+.slide .col-l ul :hover,
+.slide .col-r ul :hover {
+    font-size: 1.2em;
+    background-color: rgba(75, 69, 69, 0.618);
+    color: var(--dangerous-text-color);
+    z-index: 9;
+}
+
+/*#endregion: Spécialisations */
+
+/*#region : Effet slide de bienvenue */
+.slide .matrix-slide .matrix-paragraph {
+    font-size: 25px;
+    line-height: 1.6;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.matrix-slide {
+    position: relative;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: calc(var(--slide-height) - var(--footer-height));
+    overflow: hidden;
+}
+
+.matrix-text,
+.matrix-paragraph {
+    color: lime;
+    margin: 0 0 1rem;
+}
+
+.matrix-list {
+    list-style: none;
+    margin-right: 20px;
+}
+
+.matrix-list li {
+    list-style: none;
+}
+
+/*#endregion: Effet slide de bienvenue */
+
+/*#region: Zoom */
+
+/* Style pour l'image en zoom */
+.zoomed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(173, 169, 169, 0.977);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.zoomed p {
+    font-size: 2.2em;
+    /* 2em est deux fois la taille normale du texte */
+    margin: 40px;
+    text-align: justify;
+}
+
+.zoomed img {
+    min-width: 90%;
+    min-height: 90%;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: rgba(255, 255, 255, 0.949);
+}
+
+/*#endregion: Zoom */
+
+/*#region: Cube Mario */
+@keyframes bump {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: -20px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+.box {
+    width: 120px;
+    height: 120px;
+    background: #FFA500;
+    background: linear-gradient(45deg, #FFA500, #FF8C00);
+    position: relative;
+    border: 5px solid black;
+    border-radius: 10%;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    animation: bump 5s infinite;
+}
+
+.box .dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+}
+
+.box .dot.dot1 {
+    top: 5px;
+    left: 5px;
+}
+
+.box .dot.dot2 {
+    top: 5px;
+    right: 5px;
+}
+
+.box .dot.dot3 {
+    bottom: 5px;
+    left: 5px;
+}
+
+.box .dot.dot4 {
+    bottom: 5px;
+    right: 5px;
+}
+
+.question {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'Super Mario 256', 'Courier New';
+    font-size: 110px;
+    font-weight: bolder;
+}
+
+/*#endregion: Cube Mario */

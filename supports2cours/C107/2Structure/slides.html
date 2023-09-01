@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Structure et Concept des Blockchains</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            buildDetailedSommaire();
+        });
+    </script>
+</head>
+
+<body>
+    <div id="logo"></div>
+    <div id="progressBar"></div>
+
+    <div id="goToSlide">
+        <input type="number" min="1" id="slideInput">
+        <button id="goToSlideButton" onclick="goToSlideByInput()">Go</button>
+    </div>
+
+    <header>
+        <h1>Structure du Blockchains</h1>
+        <hr>
+    </header>
+
+    <!-- #region P1 | Comprendre la structure d’une Blockchain -->
+
+    <!-- https://www.mtpelerin.com/fr/blog/comment-fonctionne-une-blockchain  -->
+    <div class="slide" id="1.0" style="background-color: blueviolet;">
+        <div class="center-slide" style="margin-top: 10vh;">
+            <h2 class="title" id="1.0" style=" text-align: center; color: white;">Chapitre 1 : <br>
+                Comprendre la structure d’une Blockchain </h2>
+            <p style="text-align: center; color: white;">Découvrez comment les blocs individuels de données
+                s'interconnectent pour former une blockchain.</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h1>Sources</h1>
+        <ul>
+            <li><a target="_blank" href="https://www.senat.fr/rap/r17-584/r17-584_mono.html"> Senat</a></li>
+            <li><a target="_blank" href="https://cryptoast.fr/bloc-blockchain-crypto-explication/">Cryptoast</a></li>
+            <li><a target="_blank" href="https://www.mtpelerin.com/fr/blog/comment-fonctionne-une-blockchain">Mt
+                    Pelerin</a></li>
+            <li><a target="_blank" href="https://blockchainfrance.net/"> images : Blockchain France</a></li>
+        </ul>
+    </div>
+
+    <div class="slide">
+        <h1>Menu</h1>
+        <div id="sommaire"></div>
+    </div>
+
+    <div class="slide">
+        <h2 class="title" id="1.1">Introduction</h2>
+        <div class="center-slide">
+            <figure>
+                <img onclick="zoomImage(this)"
+                    style="height: 35vh; background-color: white; padding: 10px; border-radius: 10px;"
+                    src="./images/clientToServer-P2P.png" alt="Image illustrant les topologies logiques" />
+                <figcaption>Topologies</figcaption>
+            </figure>
+
+        </div>
+        <ul>
+            <li>La structure d'une Blockchain est essentielle pour comprendre son fonctionnement.</li>
+            <li>Examinons les principaux éléments qui composent une Blockchain.</li>
+        </ul>
+    </div>
+
+    <div class="slide">
+        <h2 class="title" id="1.2"> Blocs et transactions</h2>
+        <div class="center-slide">
+            <figure>
+                <img onclick="zoomImage(this)"
+                    style="height: 20vh; background-color: white; padding: 10px; border-radius: 10px;"
+                    src="./images/ChaineDeBlocs.png" alt="Image montrant des blocs et des transactions" />
+                <figcaption>Représentation d'une chaîne de blocs</figcaption>
+            </figure>
+
+        </div>
+        <ul>
+            <li>Une Blockchain est constituée de blocs qui enregistrent les transactions.</li>
+            <li>Chaque bloc contient un ensemble de transactions vérifiées.</li>
+        </ul>
+    </div>
+
+    <div class="slide">
+        <h2 class="title" id="1.3">Composants d'un bloc</h2>
+
+        <div class="center-slide">
+            <figure>
+                <img onclick="zoomImage(this)"
+                    style=" height: 30vh; background-color: white; padding: 10px; border-radius: 10px;"
+                    src="./images/StructureBlockchain.png" alt="Image montrant les composants d'un bloc" />
+                <figcaption>montrant les composants d'un bloc</figcaption>
+            </figure>
+        </div>
+        <ul>
+            <li>Chaque bloc est identifié par un hash unique, qui est un condensé numérique de ses données.
+
+            </li>
+            <li>Les blocs sont liés entre eux en utilisant le hash du bloc précédent.</li>
+        </ul>
+        <p style="font-size: x-large;"> Les derniers blocs de la blockchain Bitcoin, <a style="font-size: x-large;"
+                target="_blank" href="https://www.blockchain.com/explorer/blocks/btc?page=1"> comme vous pouvez les voir
+                sur blockchain.com.</a>
+        </p>
+    </div>
+
+    <div class="slide">
+        <h2 class="title" id="1.4">Lien entre les blocs</h2>
+        <div class="center-slide">
+            <figure>
+                <img onclick="zoomImage(this)"
+                    style="height: 40vh; background-color: white; padding: 10px; border-radius: 10px;"
+                    src="./images/liaisonEntreBlocs.png" alt="Image montrant le lien entre les blocs" />
+                <figcaption>Lien entre les blocs</figcaption>
+            </figure>
+        </div>
+        <ul>
+            <li>Chaque bloc est lié au bloc précédent en utilisant le hash du bloc précédent.</li>
+        </ul>
+    </div>
+
+    <div class="slide">
+        <!-- https://cryptoast.fr/qu-est-ce-que-le-pow-proof-of-work/ -->
+        <!-- https://www.blockchains-expert.com/quest-ce-que-la-blockchain/ -->
+        <h2 class="title" id="1.5">Validité et consensus</h2>
+
+        <div class="center-slide">
+            <figure>
+                <img onclick="zoomImage(this)"
+                    style="height: 35vh; background-color: white; padding: 10px; border-radius: 10px;"
+                    src="./images/powBitcoin.webp" alt="Image montrant le processus de consensus" />
+                <figcaption>Processus de consensus</figcaption>
+            </figure>
+        </div>
+        <ul>
+            <li>Une transaction doit être incluse dans un bloc accepté par le réseau pour être valide.</li>
+            <li>Le consensus est atteint par des mécanismes tels que la preuve de travail ou la preuve d'enjeu.</li>
+        </ul>
+    </div>
+
+    <div class="slide">
+        <h2 class="title" id="1.6">Avantages de la structure de la Blockchain</h2>
+        <br>
+        <div style="display: flex; flex-direction: row; justify-content: space-between; margin-left: 15px;"
+            class="center-slide">
+            <div class="rectangle">
+                <h3><span class="icon">&#128274;</span> Sécurité</h3>
+                <p>
+                    La blockchain garantit la sécurité des données en les rendant infalsifiables grâce à la technologie
+                    de la cryptographie.
+                    De plus, les contrats intelligents immuables automatisent les processus,
+                    éliminant ainsi les risques d'erreur humaine.
+                    La stabilité et la résilience inhérentes à la
+                    blockchain en font une solution sécurisée pour diverses applications.
+                </p>
+            </div>
+            <div class="rectangle">
+                <h3><span class="icon">&#128269;</span> Transparence</h3>
+                <p>
+                    La blockchain offre une transparence totale grâce à l'historique des transactions enregistrées de
+                    manière immuable.
+                    Chaque transaction est visible et vérifiable par tous les participants du réseau.
+                    Cette transparence favorise la confiance et permet une traçabilité complète des activités, réduisant
+                    ainsi les risques de fraude et de manipulation.
+                </p>
+            </div>
+            <div class="rectangle">
+                <h3><span class="icon">&#128100;</span> Gouvernance</h3>
+                <p>
+                    La gouvernance décentralisée de la blockchain permet une prise de décision collective et
+                    transparente.
+                    Elle supprime la nécessité d'intermédiaires et permet une création de confiance entre les
+                    parties prenantes.
+                    De plus, la nature open source de la blockchain encourage la collaboration et l'innovation en
+                    permettant à chacun d'accéder au code source et de proposer des améliorations.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="center-slide">
+            <h3>Exercices</h3>
+        </div>
+        <ul>
+            <li>
+                <a href="../Exercices/C-2.1-PreuveDeTravail/C-2.1.0_PreuveDeTravail.pdf" target="_blank">Création d’une
+                    mini
+                    Blockchain</a>
+            </li>
+            <li>
+                <a href="../Exercices/C-2.1-PreuveDeTravail/C-2.2.0_générauxByzantins.pdf" target="_blank">Le problème
+                    des généraux
+                    byzantins</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- #endregion -->
+
+    <!-- #region P2 & P4 -->
+    <!-- P2 | Comprendre le concept des principales Blockchains et leurs différences -->
+    <!-- P4 | Introduction aux principales crypto-technologies (Bitcoin, Ethereum, Smart Contracts) -->
+    <div class="slide" style="background-color: blueviolet;">
+        <div class="center-slide" style="margin-top: 10vh;">
+            <h2 class="title" id="2.0" style="text-align: center; color: white;">Chapitre 2 :<br>
+                Comprendre le concept des principales Blockchains et leurs différences</h2>
+            <p style="text-align: center; color: white;">Découvrez comment Bitcoin, Ethereum, et Cardano se distinguent
+                les uns des autres.</p>
+        </div>
+    </div>
+
+    <!-- Bitcoin -->
+    <div class="slide">
+        <h2 class="title" id="2.1">Bitcoin : La Pionnière des Cryptomonnaies</h2>
+        <p>
+            Bitcoin, la première cryptomonnaie, a révolutionné le monde financier depuis sa création en 2009. Son
+            inventeur, connu sous le pseudonyme de Satoshi Nakamoto, a introduit une technologie innovante appelée
+            blockchain. Cette technologie assure un enregistrement sécurisé et transparent de toutes les transactions.
+        </p>
+        <ul>
+            <li><strong>Décentralisation :</strong> Bitcoin opère sur un réseau décentralisé, éliminant le besoin d'une
+                autorité centrale.</li>
+            <li><strong>Offre Limitée :</strong> Avec une offre plafonnée à 21 millions, Bitcoin est considéré comme une
+                ressource précieuse.</li>
+            <li><strong>Réserve de Valeur :</strong> À l'instar de l'or, Bitcoin est souvent perçu comme une "réserve de
+                valeur" en raison de sa rareté.</li>
+        </ul>
+    </div>
+
+    <!-- Ethereum -->
+    <div class="slide">
+        <h2 class="title" id="2.2">Ethereum : La Plateforme de Blockchain Innovante</h2>
+        <p>
+            Lancée en 2015, Ethereum est une plateforme open-source de blockchain qui a ouvert la voie à l'ère des
+            applications décentralisées (dApps). Elle offre un environnement propice pour les développeurs souhaitant
+            construire et déployer leurs propres dApps.
+        </p>
+        <ul>
+            <li><strong>Contrats Intelligents :</strong> Ethereum a révolutionné le monde de la blockchain avec
+                l'introduction des contrats intelligents, des programmes qui s'exécutent automatiquement lorsque des
+                conditions prédéfinies sont remplies.</li>
+            <li><strong>Cryptomonnaie Native :</strong> Ether (ETH) est la cryptomonnaie native d'Ethereum, utilisée
+                pour toutes les transactions et les services de calcul sur le réseau.</li>
+            <li><strong>Ethereum 2.0 :</strong> Ethereum est en cours de transition vers Ethereum 2.0, une mise à jour
+                majeure visant à améliorer l'évolutivité et la sécurité du réseau.</li>
+        </ul>
+    </div>
+
+    <!-- Ripple -->
+    <div class="slide">
+        <h2 class="title" id="2.3">Ripple : La Solution de Paiement Numérique Rapide</h2>
+        <p>
+            Ripple se distingue comme une plateforme de paiement numérique et une cryptomonnaie. Conçue pour faciliter
+            des transferts d'argent rapides et économiques à l'échelle mondiale, Ripple est une solution de choix pour
+            les transactions internationales.
+        </p>
+        <ul>
+            <li><strong>Protocole de Consensus :</strong> Ripple utilise un protocole de consensus unique, se
+                distinguant des méthodes traditionnelles de preuve de travail ou de preuve d'enjeu.</li>
+            <li><strong>Cryptomonnaie Native :</strong> XRP est la cryptomonnaie native de Ripple, utilisée pour
+                faciliter les transactions sur le réseau.</li>
+            <li><strong>Utilisation Institutionnelle :</strong> Ripple est fréquemment adopté par les banques et autres
+                institutions financières pour sa rapidité et son efficacité.</li>
+        </ul>
+    </div>
+
+    <div class="slide">
+        <h2 class="title" id="2.4">Litecoin : L'Argent Numérique du Monde Cryptographique</h2>
+        <p>
+            Créée en 2011 par Charlie Lee, un ancien ingénieur de Google, Litecoin est une cryptomonnaie peer-to-peer
+            souvent comparée à l'argent, tandis que Bitcoin est considéré comme l'or du monde numérique.
+        </p>
+        <ul>
+            <li><strong>Transactions Rapides :</strong> Litecoin se distingue par des temps de transaction plus rapides
+                que Bitcoin, facilitant une utilisation plus fluide.</li>
+            <li><strong>Algorithme de Minage Accessible :</strong> Contrairement à Bitcoin, Litecoin utilise un
+                algorithme de minage différent qui est plus accessible aux mineurs individuels.</li>
+            <li><strong>Offre Maximale :</strong> Litecoin a une offre maximale de 84 millions de pièces, quatre fois
+                plus que celle de Bitcoin.</li>
+        </ul>
+    </div>
+
+    <div class="slide">
+        <h2 class="title" id="2.5">Cardano : La Plateforme de Contrats Intelligents de Nouvelle Génération</h2>
+        <p>
+            Cardano, créée par Charles Hoskinson, co-fondateur d'Ethereum, est une plateforme de blockchain qui aspire à
+            redéfinir l'avenir des contrats intelligents. Elle se distingue par son approche basée sur la recherche et
+            son engagement envers l'innovation scientifique.
+        </p>
+        <ul>
+            <li><strong>Approche Basée sur la Recherche :</strong> Cardano se distingue par son engagement envers
+                l'innovation scientifique, avec une approche de développement basée sur la recherche.</li>
+            <li><strong>Algorithme Unique :</strong> Cardano utilise un algorithme de preuve d'enjeu unique appelé
+                Ouroboros, qui offre une sécurité et une efficacité améliorées.</li>
+            <li><strong>Cryptomonnaie Native :</strong> ADA est la cryptomonnaie native de Cardano, utilisée pour les
+                transactions et les services de calcul sur le réseau.</li>
+        </ul>
+    </div>
+
+
+    <div class="slide">
+        <h2 class="title" id="2.6">Polkadot : La Plateforme Multi-Chaîne pour une Interopérabilité Sans Précédent</h2>
+        <p>
+            Polkadot est une plateforme multi-chaîne innovante qui permet le transfert de tout type de données ou
+            d'actifs, pas seulement des tokens, entre les blockchains. Son objectif principal est d'améliorer
+            l'interopérabilité entre les différentes blockchains, créant ainsi un réseau plus intégré et efficace.
+        </p>
+        <ul>
+            <li><strong>Modèle de Sécurité :</strong> Polkadot utilise un modèle de preuve d'enjeu nominée pour garantir
+                la sécurité de son réseau.</li>
+            <li><strong>Efficacité Énergétique :</strong> Par rapport aux blockchains conventionnelles, Polkadot
+                consomme une fraction de l'énergie, ce qui en fait une option plus durable.</li>
+            <li><strong>Empreinte Carbone Minimale :</strong> Selon des recherches récentes, Polkadot a l'empreinte
+                carbone la plus faible parmi les protocoles de preuve d'enjeu, soulignant son engagement envers la
+                durabilité.</li>
+        </ul>
+    </div>
+
+    <div class="slide">
+        <div style="text-align: left; font-size: large; color: white;" class="center-slide">
+            <h2 class="title" id="2.7">🔍 Comparaison des Cryptomonnaies</h2>
+            <table style="border: 1px solid white; border-collapse: collapse; width: 100%;">
+                <thead>
+                    <tr>
+                        <th style="border: 1px solid white; padding: 10px;">Cryptomonnaie</th>
+                        <th style="border: 1px solid white; padding: 10px;">Date de création</th>
+                        <th style="border: 1px solid white; padding: 10px;">Créateur</th>
+                        <th style="border: 1px solid white; padding: 10px;">Offre maximale</th>
+                        <th style="border: 1px solid white; padding: 10px;">Particularités</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid white; padding: 10px;">🔶 Bitcoin</td>
+                        <td style="border: 1px solid white; padding: 10px;">2009</td>
+                        <td style="border: 1px solid white; padding: 10px;">Satoshi Nakamoto</td>
+                        <td style="border: 1px solid white; padding: 10px;">21 millions</td>
+                        <td style="border: 1px solid white; padding: 10px;">Première cryptomonnaie, utilisée comme une
+                            "réserve de valeur"</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid white; padding: 10px;">🔷 Ethereum</td>
+                        <td style="border: 1px solid white; padding: 10px;">2015</td>
+                        <td style="border: 1px solid white; padding: 10px;">Vitalik Buterin</td>
+                        <td style="border: 1px solid white; padding: 10px;">Aucune limite</td>
+                        <td style="border: 1px solid white; padding: 10px;">Introduction des contrats intelligents,
+                            utilisée pour créer des dApps</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid white; padding: 10px;">💠 Ripple</td>
+                        <td style="border: 1px solid white; padding: 10px;">2012</td>
+                        <td style="border: 1px solid white; padding: 10px;">Chris Larsen & Jed McCaleb</td>
+                        <td style="border: 1px solid white; padding: 10px;">100 milliards</td>
+                        <td style="border: 1px solid white; padding: 10px;">Utilisé pour les transferts d'argent rapides
+                            et peu coûteux à l'échelle mondiale</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid white; padding: 10px;">🔘 Litecoin</td>
+                        <td style="border: 1px solid white; padding: 10px;">2011</td>
+                        <td style="border: 1px solid white; padding: 10px;">Charlie Lee</td>
+                        <td style="border: 1px solid white; padding: 10px;">84 millions</td>
+                        <td style="border: 1px solid white; padding: 10px;">Temps de transaction plus rapide que
+                            Bitcoin, accessible aux mineurs individuels</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid white; padding: 10px;">🔵 Cardano</td>
+                        <td style="border: 1px solid white; padding: 10px;">2017</td>
+                        <td style="border: 1px solid white; padding: 10px;">Charles Hoskinson</td>
+                        <td style="border: 1px solid white; padding: 10px;">45 milliards</td>
+                        <td style="border: 1px solid white; padding: 10px;">Approche basée sur la recherche, engagement
+                            envers l'innovation scientifique</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid white; padding: 10px;">🔴 Polkadot</td>
+                        <td style="border: 1px solid white; padding: 10px;">2020</td>
+                        <td style="border: 1px solid white; padding: 10px;">Gavin Wood</td>
+                        <td style="border: 1px solid white; padding: 10px;">Aucune limite</td>
+                        <td style="border: 1px solid white; padding: 10px;">Améliore l'interopérabilité entre les
+                            différentes blockchains, faible empreinte carbone</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- #endregion P2 & P4 -->
+
+    <!-- #region P3 | Opportunités et risques liés aux cryptomonnaies -->
+    <div class="slide" style="background-color: blueviolet; padding: 10vh 0;">
+        <div class="center-slide">
+            <h2 class="title" id="3.0" style="text-align: center; color: white;">Chapitre 3 : Opportunités et Risques
+                des Cryptomonnaies</h2>
+            <p style="text-align: center; color: white; max-width: 800px; margin: 20px auto;">Découvrez les avantages
+                potentiels et les défis inhérents à l'investissement et à l'utilisation des cryptomonnaies.</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2 class="title" id="3.1">Opportunités Offertes par les Cryptomonnaies</h2>
+        <ul>
+            <li><strong>Indépendance Financière :</strong> Les cryptomonnaies offrent une alternative aux institutions
+                financières traditionnelles.</li>
+            <li><strong>Potentiel de Rendement Élevé :</strong> Les cryptomonnaies peuvent offrir des rendements
+                significatifs, bien que risqués.</li>
+            <li><strong>Accessibilité :</strong> Facilité d'accès et d'utilisation, rendant les cryptomonnaies
+                accessibles à tous.</li>
+            <li><strong>Transparence et Sécurité :</strong> La technologie blockchain offre une transparence et une
+                sécurité inégalées.</li>
+            <li><strong>Transactions Internationales :</strong> Les cryptomonnaies facilitent les transactions
+                internationales.</li>
+        </ul>
+    </div>
+
+    <div class="slide">
+        <h2 class="title" id="3.2">Risques Associés aux Cryptomonnaies</h2>
+        <ul>
+            <li><strong>Volatilité des Prix :</strong> Les cryptomonnaies sont notoirement volatiles, ce qui peut
+                entraîner des pertes importantes.</li>
+            <li><strong>Risque de Perte Totale :</strong> Il existe un risque de perte totale de l'investissement.</li>
+            <li><strong>Fraude et Piratage :</strong> Les cryptomonnaies peuvent être ciblées par des fraudeurs et des
+                pirates informatiques.</li>
+            <li><strong>Manque de Réglementation :</strong> Le manque de réglementation peut entraîner un manque de
+                protection pour les investisseurs.</li>
+            <li><strong>Activités Illégales :</strong> Les cryptomonnaies peuvent être utilisées à des fins illégales.
+            </li>
+        </ul>
+    </div>
+
+    <div class="slide">
+        <h2 class="title" id="3.3">Gestion des Risques des Cryptomonnaies</h2>
+        <ul>
+            <li><strong>Investissement Responsable :</strong> Ne pas investir plus que ce que vous pouvez vous permettre
+                de perdre.</li>
+            <li><strong>Recherche Approfondie :</strong> Il est essentiel de faire des recherches approfondies avant
+                d'investir dans les cryptomonnaies.</li>
+            <li><strong>Sécurité des Portefeuilles :</strong> Utiliser des portefeuilles sécurisés pour stocker vos
+                cryptomonnaies.</li>
+            <li><strong>Implications Fiscales :</strong> Être conscient des implications fiscales de l'investissement en
+                cryptomonnaies.</li>
+            <li><strong>Conseil Financier :</strong> Considérer l'aide d'un conseiller financier pour naviguer dans le
+                monde des cryptomonnaies.</li>
+        </ul>
+    </div>
+    <!-- #endregion P3 -->
+
+    <!-- P5 | Test sommatif théorique -->
+    <div class="slide" style="background-color: #f2f2f2; text-align: center; padding: 2vh 0; color: black;">
+        <h2>Annonce : Test à venir</h2>
+        <div class="container">
+            <div class="col-l">
+                <ul style="text-align: left;">
+                    <li>J1 : Introduction à la Blockchain et aux Cryptomonnaies (Oo 1.1, 2.1)</li>
+                    <ul style="list-style-type: circle;">
+                        <li>Présentation du cours et des objectifs</li>
+                        <li>Introduction à la Blockchain : définition, histoire et importance</li>
+                        <li>Les principes de base de la Blockchain : cryptographie, transactions, blocs</li>
+                        <li>Types de Blockchain : publique, privée, consortium</li>
+                        <li>Activité pratique : Utilisations actuelles de la Blockchain</li>
+                    </ul>
+                </ul>
+
+            </div>
+            <div class="col-r">
+
+                <ul style="text-align: left;">
+                    <li>J2 : Structure et Concept des Blockchains (Oo 2.1, 2.2, 3.1)</li>
+                    <ul style="list-style-type: circle;">
+                        <li>Comprendre la structure d’une Blockchain</li>
+                        <li>Comprendre le concept des principales Blockchains et leurs différences</li>
+                        <li>Opportunités et risques liés aux cryptomonnaies</li>
+                        <li>Introduction aux principales crypto-technologies</li>
+                        <li id="arrow"> &#10167; Test sommatif théorique</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+        <h3>Le test aura lieu dans :</h3>
+        <div id="countdown" style="font-size: 48px; font-weight: bold; margin-top: 10px; color: brown;"></div>
+    </div>
+
+    <script>
+        // Fonction pour afficher le compte à rebours
+        function countdown(targetDate) {
+            // Récupérer la date actuelle
+            const now = new Date().getTime();
+
+            // Calculer la différence entre la date cible et la date actuelle
+            const distance = targetDate - now;
+
+            // Calculer les jours, heures, minutes et secondes restantes
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Afficher le compte à rebours dans l'élément avec l'id "countdown"
+            document.getElementById("countdown").innerHTML = days + "j " + hours + "h " + minutes + "m " + seconds + "s";
+
+            // Mettre à jour le compte à rebours toutes les secondes
+            if (distance > 0) {
+                setTimeout(function () {
+                    countdown(targetDate);
+                }, 1000);
+            }
+        }
+
+        // Date cible pour le compte à rebours, c'est la valeur à adapter... selon le calcul simple (minutes x60 x1000) 
+        // (dans 20 minutes et 5 secondes :-) )
+        const targetDate = new Date().getTime() + (20 * 60 * 1005);
+        countdown(targetDate);
+    </script>
+
+    <div class="slide" style="background-color: black; color: white; text-align: center; padding: 20vh 0;">
+        <h1 style="margin-bottom: 2vh;">The end</h1>
+        <h2>Merci de votre attention :-)</h2>
+        <h3 style="font-style: italic;">
+            "Les cryptomonnaies sont comme des clés magiques : elles ouvrent des portes dans le monde virtuel, mais ne
+            perdez jamais la clé !"
+        </h3>
+    </div>
+
+
+    <footer>
+        ETML / CFPV | module 107 Mettre en œuvre des solutions ICT avec la technologie blockchain |
+        <strong style="color: var(--backgroundColorSlide);">
+            <span id="page"> </span>
+        </strong>
+        <span id='horloge' style="position: fixed; bottom: 5px; right: 30px;"></span>
+
+    </footer>
+</body>
+
+</html>

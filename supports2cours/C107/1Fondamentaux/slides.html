@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Introduction aux technologies des blockchain</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/blockchain.css">
+    <script src="./js/script.js" defer></script>
+</head>
+
+<!-- https://www.lemagit.fr/dessin/Blockchain-les-erreurs-a-eviter -->
+
+<body>
+
+    <div id="logo"></div>
+    <div id="progressBar"></div>
+
+    <div id="goToSlide">
+        <input type="number" min="1" id="slideInput">
+        <button id="goToSlideButton" onclick="goToSlideByInput()">Go</button>
+    </div>
+
+    <header>
+        <h1>Les fondements de la blockchain</h1>
+        <hr>
+    </header>
+
+    <!-- #region P1 | Présentation du cours et des objectifs  -->
+
+    <div class="slide"> <!-- Bienvenue  -->
+        <div class="matrix-slide">
+
+            <h1 class="matrix-text">Bienvenue au cours sur la Blockchain</h1>
+
+            <ul class="matrix-list">
+                <li>
+                    <p class="matrix-paragraph">
+                        Je suis ravi de vous accueillir dans ce cours passionnant qui vous permettra
+                        de comprendre les bases de la Blockchain, les cryptomonnaies, et bien plus encore.</p>
+                </li>
+                <li>
+                    <p class="matrix-paragraph">
+                        Que vous soyez novice en matière de Blockchain ou que vous cherchiez à
+                        approfondir vos connaissances, j'ai conçu ce cours pour vous offrir une compréhension complète
+                        et pratique de la technologie Blockchain.
+                    </p>
+                </li>
+                <li>
+                    <p class="matrix-paragraph">
+                        Préparez-vous à explorer le formidable potentiel de la Blockchain et à
+                        découvrir comment elle peut transformer le monde de la technologie et au-delà.
+                    </p>
+                </li>
+            </ul>
+
+            <div class="matrix-text" style="font-size: xx-large; color: var(--dangerous-text-color);">
+                Commençons ce voyage passionnant ensemble!
+            </div>
+        </div>
+    </div>
+
+    <div class="slide"><!-- Sommaire  -->
+        <h3 style="color: var(--dangerous-text-color);">Menu</h3>
+        <div id="sommaire" class="container">
+            <!-- Appel de la fonction buildSommaire lorsque le contenu est entièrement chargé -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    buildSommaire();
+                });
+            </script>
+        </div>
+    </div>
+
+    <div class="slide"> <!-- Identification du module  -->
+        <h2 class="title" id="0.0">Identification du module</h2>
+        <ul class="numerique">
+            <li>Identifier les répercussions des solutions blockchain sur le quotidien professionnel.</li>
+            <li>Choisir une technologie blockchain appropriée en fonction d'une situation donnée.</li>
+            <li>Installer et configurer le matériel informatique d'une installation de minage.</li>
+            <li>Procéder au chiffrement d'un jeu de données ou d'un fichier à l'aide d'une procédure blockchain.
+            </li>
+            <li>Élaborer un propre cas d'application et le prototype correspondant.</li>
+            <li>Planifier des méthodes de contrôle qualité et les mettre en œuvre.</li>
+            <li>Maîtriser les méthodes d'assurance qualité, de contrôle qualité et de tests.</li>
+        </ul>
+        <ul>
+            <li><a href="https://www.modulbaukasten.ch/module/107/1/fr-FR?title=Mettre-en-%C5%93uvre-des-solutions-ICT-avec-la-technologie-blockchain"
+                    target="_blank">Plan modulaire ICT</a></li>
+        </ul>
+    </div>
+
+    <div class="slide"> <!-- DEP -->
+        <h2 class="title" id="0.1">Directives d’évaluation des prestations (DEP)</h2>
+        <ul>
+            <br>
+            <li>Épreuve 1 - Théorique (Pondération : 50%)</li>
+            <p>Le Test Sommatif 1 évaluera votre compréhension des concepts théoriques de la Blockchain et des
+                cryptomonnaies abordés lors des deux premiers jours du cours.
+                Il couvrira les bases de la Blockchain, les types de Blockchain, la structure et le concept des
+                principales Blockchains,
+                ainsi que les opportunités et les risques liés aux cryptomonnaies</p>
+
+            <br>
+            <li>Épreuve 2 - Analyse d'un cas réel (Pondération : 50%) </li>
+
+            <p>
+                Le Test Sommatif 2 évaluera vos compétences pratiques en configuration de minage et en développement
+                sur la Blockchain,
+                mettant en pratique les concepts appris lors du cours
+            </p>
+        </ul>
+    </div>
+
+    <div class="slide"> <!-- Objectifs du cours -->
+        <h2 class="title" id="0.2">Objectifs du Cours</h2>
+        <ul>
+            <li>Comprendre les bases de la Blockchain et les cryptomonnaies.</li>
+            <li>Apprendre la structure et le concept des principales Blockchains.</li>
+            <li>Connaître les opportunités et les risques liés aux cryptomonnaies.</li>
+            <li>Comprendre les principales crypto-technologies et leur fonctionnement.</li>
+            <li>Apprendre les concepts de configuration et de sécurité d'une installation de minage.</li>
+        </ul>
+    </div>
+
+    <div class="slide"> <!-- Construction du cours -->
+        <h2 class="title" id="0.3">Construction du cours</h2>
+        <ul>
+            <li>Conçu pour les novices en matière de Blockchain.</li>
+            <li>Couvre une variété de sujets, de la théorie à la pratique.</li>
+            <li>Inclut des activités pratiques et des tests sommatifs.</li>
+            <li>Se termine par un projet pratique.</li>
+        </ul>
+        <h3>Sources</h3>
+        <ul>
+            <li><a target="_blank" href="//www.linkedin.com/learning/les-fondements-de-la-blockchain">Les fondements de
+                    la
+                    blockchain -
+                    Linkedin</a></li>
+            <li><a target="_blank"
+                    href="https://www.youtube.com/watch?v=uFDoxWGWOBU&t=5091s&ab_channel=YorzianVoD">Cours complet
+                    d'introduction sur la Blockchain - Yorzian</a></li>
+        </ul>
+    </div>
+
+    <!-- #endregion P1 : Présentation du cours et des objectifs  -->
+
+    <!-- #region Accroche -->
+    <div class="slide" style="background-color: rebeccapurple;">
+        <h1 style="height: 80vh; position: relative; top:30vh;">Accroche</h1>
+    </div>
+
+    <div class="slide"> <!-- Accroche  -->
+        <h2 class="title" id="1.0">Vers l'Infini et au-delà : Un Voyage à Travers la Blockchain</h2>
+        <table style="width:100%;">
+            <tr>
+                <td style="width:40%; vertical-align: top;">
+                    <video width="500" controls>
+                        <source src="./videos/ToyStory-ArrivéeDeBuzz.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la vidéo.
+                    </video>
+                </td>
+                <td style="width:60%; vertical-align: top;">
+                    <p>
+                        La blockchain n'est pas simplement une autre technologie, c'est le précurseur d'une
+                        révolution
+                        numérique sans précédent.
+                        Joignez-vous à nous dans ce voyage captivant où nous démêlerons ensemble les énigmes
+                        entourant
+                        la blockchain.
+                        Nous allons explorer comment cette innovation façonne audacieusement le paysage
+                        technologique
+                        mondial et redéfinit notre conception de la sécurité, de la transparence et de l'autonomie.
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- #endregion Accroche -->
+
+    <!-- #region P2 | Introduction à la Blockchain : définition, histoire et importance-->
+    <div class="slide"> <!-- Au commencement, démarrage de l'histoire  -->
+        <br>
+        <div class="center-slide">
+            <h2 class="title" id="2.0">Au commencement : les origines de la Blockchain</h2>
+            <img src="./images/bitcoin.png" alt="leBitCoin" width="20%">
+
+            <p class="hiddenText" style="display: none;">
+                Mais avant de parler de toutes ces monnaies, ... <br>
+                je vous propose de reprendre ensemble l'histoire de l'internet.
+            </p>
+        </div>
+    </div>
+
+    <div class="slide"> <!-- TimeLine Internet -->
+        <h2 class="title" id="2.1">Histoire de l'internet</h2>
+        <img src="./images/TimeLine_HistoryOfInternet.svg" onclick="zoomImage(this)"
+            style="background-color: aliceblue;">
+    </div>
+
+    <div class="slide">
+        <!-- [Exercices] Réflexion avec les élèves (ont-ils vraiment compris ?) -->
+        <h2>Exercices :</h2>
+        <ul class="numerique">
+            <li>Selon vous, quel est le protocole le plus couramment utilisé dans le cadre du partage de fichiers en
+                ligne ?
+            </li>
+            <li>Pouvez-vous expliquer pourquoi le partage en ligne de fichiers peut poser des défis aux entreprises qui
+                vendent des contenus physiques comme des disques, des films ou d'autres types de médias numériques
+                susceptibles d'être partagés facilement ?
+            </li>
+            <li>
+                <table style="width: 80%;"" >
+                    <tr >
+                        <td style="vertical-align: text-top; width: 90%;"> Pensez-vous que la photo de votre chat possède une valeur
+                            intrinsèque ?
+                            <br>Justifiez votre réponse.
+                        </td>
+                        <td style="margin: 0 auto; width: 20%; background-color;">
+                            <img src="./images/cat.jpg" style="width: 220px; margin-top: -60px; border: 2px solid white; position: absolute;">
+                        </td>
+                        
+                    </tr>
+                </table>
+            </li>
+            <li>Est-il possible de transférer un billet de 100 francs via internet ?
+                <br>Si oui, comment cette action pourrait-elle influencer sa valeur ?
+            </li>
+        </ul>
+        <a style="margin-left: 50px;" target="_blank" href="../P2-Introduction Blockchain/C-2.0ValeurNumérique.pdf">
+            Télécharger le PDF</a>
+        <br>
+        <br>
+        <a style="margin-left: 50px; color: red;" target="_blank"
+            href="../P2-Introduction Blockchain/X-2.0ValeurNumérique.pdf">
+            Télécharger le corrigé
+        </a>
+    </div>
+
+    <div class="slide"> <!-- Où nous sommes aujourd'hui -->
+        <h2 class="title" id="2.2">L'état de l'art</h2>
+        <ul>
+            <li>
+                <strong>Replication d'informations</strong>: Internet permet de copier et partager des données
+                rapidement,
+                <br>facilitant la diffusion d'informations à l'échelle mondiale.
+            </li>
+
+            <li>
+                <strong>Partage d'informations</strong>: L'accessibilité et la facilité de partage d'informations
+                n'ont
+                jamais été aussi grandes grâce à l'Internet de la copie.
+            </li>
+
+            <li>
+                <strong>Droits d'auteur</strong>: Le partage facile d'informations soulève des problématiques liées
+                aux
+                droits d'auteur et à la propriété intellectuelle.
+            </li>
+
+            <li>
+                <strong>Désinformation</strong>: L'Internet de la copie facilite la diffusion rapide de
+                désinformation,
+                <br>posant un défi à la vérification des faits.
+            </li>
+        </ul>
+        <p style="text-align: center;">
+            <strong> " Observation :</strong> Internet soulève des défis significatifs en matière de confiance !"
+        </p>
+
+        <h3 style="text-align: center; color:var(--dangerous-text-color)">
+            Comment instaurer la confiance dans l'Internet ?
+        </h3>
+    </div>
+
+    <div class="slide"> <!--Tier de confiance ... -->
+        <div class="container">
+            <div class="col-l">
+                <h2 class="title" id="2.3">Confiance par un Tiers</h2>
+                <div class="center-slide">
+                    <img src="./images/ConfianceTiers.svg" style="background-color: white; height: 450px;"
+                        onclick="zoomImage(this)">
+                </div>
+            </div>
+            <div class="col-r">
+                <h3>Par exemple ...</h3>
+                <ul>
+                    <li>Notaire</li>
+                    <li>Banque</li>
+                    <li>Carte bancaire</li>
+                    <li>Service (Uber,..)</li>
+                    <img src="./images/TiersConfiance.png" width="300px">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide"> <!-- [Question] Problématique -->
+        <div class="center-slide" style="margin-top: 20vh;">
+            <h2>
+                Quels sont les problèmes courants associés à la centralisation lors de l'utilisation de services tiers ?
+            </h2>
+        </div>
+        <h3>Exercice : </h3>
+        <a style="margin-left: 50px;" target="_blank"
+            href="../P2-Introduction Blockchain/C-2.1ProblèmesCentralisation.pdf">Télécharger le
+            PDF</a>
+        <br><br>
+        <a style="margin-left: 50px; color: red;" target="_blank"
+            href="../P2-Introduction Blockchain/X-2.1ProblèmesCentralisation.pdf">
+            Télécharger le corrigé
+        </a>
+
+    </div>
+
+    <div class="slide"> <!-- [Caractéristique 1/2] Problématique -->
+        <h2 class="title" id="2.4">Problèmes liés à la centralisation des services tiers </h2>
+        <div style="position: absolute; top:5px; right: 5px; font-size: x-large;">
+            (1/2)
+        </div>
+        <ul>
+            <li>
+                <strong>Perte de contrôle :</strong>
+                Délégation de l'accès à des services tiers entraînant une perte de contrôle sur les données et les
+                opérations.
+            </li>
+            <li>
+                <strong>Dépendance excessive :</strong>
+                Forte dépendance du bon fonctionnement des services tiers pour assurer le bon fonctionnement de votre
+                application ou de vos processus.
+            </li>
+            <li>
+                <strong>Confidentialité et sécurité :</strong>
+                Risques pour la confidentialité et la sécurité en raison de la centralisation des données et des
+                opérations, surtout si les mesures de protection des services tiers sont insuffisantes.
+            </li>
+            <li>
+                <strong>Risque de panne :</strong>
+                Problèmes techniques ou arrêt des services tiers pouvant provoquer des interruptions ou des
+                dysfonctionnements dans vos propres systèmes, entraînant une perte de disponibilité ou des impacts sur
+                les performances.
+            </li>
+        </ul>
+    </div>
+
+    <div class="slide"> <!-- [Caractéristique 2/2] Problématique -->
+        <h2>Problèmes liés à la centralisation des services tiers</h2>
+        <div style="position: absolute; top:5px; right: 5px; font-size: x-large;">
+            (2/2)
+        </div>
+        <ul>
+            <li>
+                <strong>Coûts :</strong>
+                Frais financiers tels que des abonnements, des commissions ou des modèles de tarification liés à
+                l'utilisation de services tiers, pouvant affecter votre budget.
+            </li>
+            <li>
+                <strong>Évolutivité limitée :</strong>
+                Limitation des fonctionnalités et de l'évolutivité proposées par les services tiers, restreignant vos
+                options pour répondre à des besoins spécifiques ou des demandes de croissance.
+            </li>
+            <li>
+                <strong>Vulnérabilité aux changements :</strong>
+                Impact sur vos opérations et vos données suite à des modifications des conditions d'utilisation, de la
+                politique de confidentialité ou de la disponibilité des services tiers, nécessitant une adaptation ou
+                une reconfiguration de votre part.
+            </li>
+        </ul>
+    </div>
+
+    <!-- #endregion P2 : Introduction à la Blockchain : définition, histoire et importance -->
+
+    <!-- #region P3 | Les principes de base de la Blockchain : cryptographie, transactions, blocs -->
+    <div class="slide" style="background-color: rebeccapurple;">
+        <h1 style="height: 80vh; position: relative; top:30vh;">Le blockchain : Web 3.0</h1>
+    </div>
+
+    <div class="slide"> <!--L'internet du futur (valeur)-->
+        <h2 class="title" id="3.0">L'internet de la valeur</h2>
+        <ul>
+            <li>
+                <strong>Transferts instantanés :</strong>
+                <br>
+                Échange d'actifs sans intermédiaire, permettant des transactions rapides et efficaces.
+            </li>
+            <li>
+                <strong>Élimination d'intermédiaires :</strong>
+                <br>
+                Réduction des coûts et de la complexité grâce à des transactions directes et automatisées.
+            </li>
+            <li>
+                <strong>Blockchain &amp; cryptomonnaies :</strong>
+                <br>
+                Utilisation de registres décentralisés,
+                transparents et sécurisés pour garantir la confiance et la traçabilité.
+            </li>
+            <li>
+                <strong>Inclusion financière :</strong>
+                <br>
+                Accès élargi aux services financiers, offrant des opportunités pour tous les individus, notamment les
+                non-bancarisés.
+            </li>
+        </ul>
+        <br>
+        <a style="margin-left: 50px;" target="_blank"
+            href="../P2-Introduction Blockchain/C-2.3DéfinitionBlockchain.pdf">
+            Télécharger le PDF
+        </a>
+        <br>
+        <br>
+        <a style="margin-left: 50px; color: red;" target="_blank"
+            href="../P2-Introduction Blockchain/X-2.3DéfinitionBlockchain.pdf">
+            Télécharger le corrigé
+        </a>
+    </div>
+
+    <!--https://www.senat.fr/rap/r17-584/r17-584_mono.html  -->
+
+    <div class="slide"> <!--[Exerices] Réflexion avec les élèves sur les solutions -->
+        <h2 class="title" id="3.1">Principes fondamentaux de la Blockchain</h2>
+        <div class="center-slide" style="text-align:left;">
+            <ul>
+                <h3>
+                    Qu'est-ce que la cryptographie et pourquoi est-elle importante dans la blockchain ?
+                </h3>
+                <br>
+                <!-- 
+                    Cette question permet d'introduire les élèves à la notion de cryptographie 
+                    et de souligner son rôle essentiel dans la sécurisation des données 
+                    et des transactions dans la blockchain.
+                -->
+                <h3>
+                    Comment les transactions sont-elles enregistrées et vérifiées dans la blockchain ?
+                </h3>
+                <br>
+                <!--
+                    Cette question invite les élèves à réfléchir au processus de l'enregistrement et de la vérification 
+                    des transactions dans la blockchain, en mettant en évidence l'importance de la transparence 
+                    et de la sécurité.
+                -->
+                <h3>
+                    Qu'est-ce qu'un bloc dans la blockchain et comment les blocs sont-ils liés entre eux ?
+                </h3>
+                <br>
+                <!-- 
+                    Cette question permet d'expliquer le concept des blocs dans la blockchain, 
+                    leur fonction dans l'enregistrement des transactions et la manière dont ils sont connectés 
+                    pour former une chaîne de blocs.
+                -->
+            </ul>
+        </div>
+
+        <div class="col-r" style="width: 30%;">
+            <!-- Cube question design Mario  -->
+            <div class="box">
+                <div class="question">?</div>
+                <div class="dot dot1"></div>
+                <div class="dot dot2"></div>
+                <div class="dot dot3"></div>
+                <div class="dot dot4"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" style="background-color: rebeccapurple;">
+        <h1 style="position: relative; top:25vh;">La Cryptographie dans la Blockchain</h1>
+        <h2 style="position: relative; top:25vh; text-align: center;">Sécuriser les transactions et assurer l'anonymat
+        </h2>
+    </div>
+
+
+    <div class="slide">
+
+        <h2 class="title" id="4.0"> Qu'est-ce que la cryptographie ? </h2>
+        <p> La cryptographie est une méthode pour sécuriser les communications en utilisant des codes, de sorte que
+            seules les personnes pour qui l'information est destinée peuvent la lire et la comprendre.</p>
+
+        <div class="center-slide">
+            <figure>
+                <img onclick="zoomImage(this)" src="images/cryptage_a_cle_symetrique.png"
+                    alt="Un schéma simple montrant le processus de cryptage et de décryptage.">
+                <figcaption>Processus de cryptage et de décryptage</figcaption>
+            </figure>
+        </div>
+    </div>
+
+
+    <div class="slide">
+        <h2 class="title" id="4.1"> Cryptographie à clé publique</h2>
+
+        <p>La blockchain utilise la cryptographie à clé publique, qui utilise une paire de clés : une clé publique pour
+            crypter les informations et une clé privée pour les décrypter. </p>
+        <div class="center-slide">
+            <figure>
+                <img onclick="zoomImage(this)" style="background-color: white;"
+                    src="images/cryptage_a_cle_asymetrique.png"
+                    alt="Un diagramme montrant comment la clé publique et la clé privée fonctionnent ensemble.">
+                <figcaption>comment la clé publique et la clé privée fonctionnent ensemble</figcaption>
+            </figure>
+        </div>
+    </div>
+
+
+    <div class="slide">
+        <h2 class="title" id="4.2">Comment la cryptographie est utilisée dans la blockchain</h2>
+
+        <p>
+            Dans la blockchain, la cryptographie est utilisée pour sécuriser les transactions et assurer l'anonymat des
+            utilisateurs.
+            Chaque transaction est signée avec la clé privée de l'utilisateur, ce qui garantit que la transaction est
+            authentique et n'a pas été modifiée.
+        </p>
+
+        <div class="center-slide">
+            <figure>
+                <img onclick="zoomImage(this)" style="width: 85%;"
+                    src="images/Clé-privée-clé-publique-transaction-Bitcoin-1024x576.webp"
+                    alt="Un diagramme montrant une transaction étant signée avec une clé privée, puis vérifiée avec la clé publique correspondante.">
+                <figcaption>une transaction étant signée avec une clé privée, puis vérifiée avec la clé publique
+                    correspondante</figcaption>
+            </figure>
+        </div>
+    </div>
+
+
+    <div class="slide">
+        <h2 class="title" id="4.3"> Hashing </h2>
+        <p>Le hachage est une autre technique cryptographique utilisée dans la blockchain. Il transforme les données
+            d'entrée de n'importe quelle taille en une sortie de taille fixe, ce qui est utile pour vérifier l'intégrité
+            des données.</p>
+        <div class="center-slide">
+            <figure>
+                <img onclick="zoomImage(this)" style="background-color: white; width: 60%;"
+                    src="images/1200px-Hachage.svg.png" alt=" Un diagramme montrant le processus de hachage.">
+                <figcaption>Processus de hachage.</figcaption>
+            </figure>
+        </div>
+    </div>
+
+
+    <div class="slide">
+        <h2 class="title" id="4.4"> Résumé</h2>
+        <p>
+            La cryptographie est essentielle pour la sécurité et le fonctionnement de la blockchain. Elle permet de
+            sécuriser les transactions, de protéger l'anonymat des utilisateurs et de maintenir l'intégrité des données.
+        </p>
+
+        <div class="center-slide">
+            <figure>
+                <img onclick="zoomImage(this)" style="background-color: white; width: 80vh;"
+                    src="images/CryptographieBlockchain.svg" alt="synhtèse">
+                <figcaption>Schéma d'un block</figcaption>
+            </figure>
+        </div>
+    </div>
+    <!-- #endregion : P3 -->
+
+    <!-- #region P4 | Types de Blockchain, publique, privée, consortium -->
+
+    <div class="slide">
+        <!-- 
+            Explique le concept de la blockchain comme un grand livre comptable pour le rendre plus compréhensible.
+            Avant de passer aux applications, assure-toi que tout le monde a bien saisi les caractéristiques clés de la blockchain.
+            Utilise des exemples concrets pour montrer comment fonctionne la blockchain dans la vie réelle.
+            Préviens ton auditoire qu'on va se plonger dans les différents types de blockchain dans les prochains slides.
+        -->
+        <br>
+        <div class="center-slide">
+            <h2 class="title" id="5.0">Type de Blockchain</h2>
+        </div>
+        <ul>
+            <li>Publique</li>
+            <li>Privée</li>
+            <li>Consortium</li>
+        </ul>
+
+        <figure>
+            <img src="" alt="">
+            <figcaption></figcaption>
+        </figure>
+
+    </div>
+
+    <div class="slide">
+        <h2 class="titl" id="5.1"> Blockchain Publique</h2>
+
+        <ul class="numerique">
+            <li>
+                <strong> Définition </strong>
+                Une blockchain publique est ouverte à tous. Tout le monde peut participer à la validation des
+                transactions et à la création de nouveaux blocs.
+
+            </li>
+            <li>
+                <strong>Avantages </strong>
+                Transparence totale : Toutes les transactions sont publiques et vérifiables par quiconque.
+                Aucune entité unique ne contrôle le réseau.
+
+            </li>
+            <li>
+                <strong>Inconvénients</strong>
+                <ul>
+                    <li>
+                        Efficacité et vitesse plus faibles : Le processus de validation est plus lent que dans les
+                        blockchains
+                        privées.
+                    </li>
+                    <li>
+                        Consommation d'énergie plus élevée : Les blockchains publiques utilisent souvent la preuve de
+                        travail (Proof
+                        of Work) qui est énergivore.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>Exemple</strong>
+                <p>Bitcoin est un exemple de blockchain publique.</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="slide">
+
+        <h2 class="title" id="5.2">Blockchain Privée </h2>
+
+        <ul>
+            <li>
+                <strong>Définition</strong>
+                Une blockchain privée est contrôlée par une seule entité. L'accès à la blockchain est limité à cette
+                entité ou à des participants spécifiquement invités.
+            </li>
+            <li>
+                <strong>Avantages</strong>
+                Efficacité et vitesse plus élevées : Moins de participants signifie un processus de validation plus
+                rapide.
+                Consommation d'énergie réduite : Les blockchains privées n'ont pas besoin de preuve de travail.
+            </li>
+            <li>
+                <strong>Inconvénients</strong>
+                Manque de transparence : Toutes les transactions ne sont pas nécessairement visibles pour tous les
+                participants.
+                Centralisation : Une seule entité a le contrôle, ce qui peut entraîner des problèmes de confiance.
+            </li>
+            <li>
+                <strong>Exemple </strong>
+                Hyperledger est un exemple de blockchain privée.
+            </li>
+        </ul>
+    </div>
+
+    <div class="slide">
+        <h2 class="title" id="5.3">Blockchain de Consortium</h2>
+
+        <ul>
+            <li>
+                <strong> Définition</strong>
+                Une blockchain de consortium est contrôlée par un groupe d'entreprises. Seuls les nœuds de ce groupe
+                peuvent valider les transactions.
+
+            </li>
+            <li>
+                <strong> Avantages </strong>
+                Equilibre entre transparence et efficacité : Plus rapide que les blockchains publiques mais plus
+                transparent que
+                les blockchains privées.
+                Partage du contrôle : Aucune entreprise unique ne détient tout le pouvoir.
+            </li>
+            <li>
+                <strong> Inconvénients </strong>
+                Accès limité : Seuls les membres du consortium peuvent participer.
+                Moins de décentralisation : Le réseau est contrôlé par un groupe restreint plutôt que par un large
+                public.
+            </li>
+            <li>
+                <strong> Exemple </strong>
+                Quorum, développé par JP Morgan, est un exemple de blockchain de consortium.
+            </li>
+        </ul>
+    </div>
+
+    <div class="slide">
+        <h2 class="title" id="5.5"> Comparaison et Conclusion</h2>
+        <p>Tableau de comparaison entre les blockchains publique, privée, et de consortium</p>
+
+        <div class="center-slide">
+            <table
+                style="width:90%; padding: 5px; text-align: left; font-size: 20px; border-collapse: collapse; border: 2px solid white;">
+                <tr style="border: 2px solid white;">
+                    <th style="padding: 3px; border-right: 2px solid white"><a style="font-size: 10px;" target="_blank"
+                            href="./images/ArbreTypeBlockchain.svg"> image</a></th>
+                    <th style="padding: 3px; border-right: 1px solid white">Blockchain Publique</th>
+                    <th style="padding: 3px; border-right: 1px solid white">Blockchain Privée</th>
+                    <th style="padding: 3px; border-right: 1px solid white">Blockchain de Consortium</th>
+                </tr>
+                <tr>
+                    <td style="padding: 3px;border-right: 2px solid white">Accès</td>
+                    <td style="padding: 3px;border-right: 1px solid white">Ouvert à tous</td>
+                    <td style="padding: 3px;border-right: 1px solid white">Limité à une organisation / un individu</td>
+                    <td style="padding: 3px;border-right: 1px solid white">Limité à un groupe d'organisations</td>
+                </tr>
+                <tr>
+                    <td style="padding: 3px; border-right: 2px solid white">Transparence</td>
+                    <td style="padding: 3px;border-right: 1px solid white">Haute (Toutes les transactions sont
+                        publiques)</td>
+                    <td style="padding: 3px;border-right: 1px solid white">Faible (Les transactions sont privées)</td>
+                    <td style="padding: 3px;border-right: 1px solid white">Modérée (Les transactions sont visibles par
+                        les membres du consortium)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 3px;border-right: 2px solid white">Vitesse et Efficacité</td>
+                    <td style="padding: 3px;border-right: 1px solid white">Faible (Processus de validation lent)</td>
+                    <td style="padding: 3px;border-right: 1px solid white">Haute (Processus de validation rapide)</td>
+                    <td style="padding: 3px;border-right: 1px solid white">Modérée (Plus rapide que les publiques, plus
+                        lente que les privées)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 3px;border-right: 2px solid white">Contrôle</td>
+                    <td style="padding: 3px;border-right: 1px solid white">Décentralisé</td>
+                    <td style="padding: 3px;border-right: 1px solid white">Centralisé</td>
+                    <td style="padding: 3px;border-right: 1px solid white">Partiellement décentralisé</td>
+                </tr>
+                <tr>
+                    <td style="padding: 3px;border-right: 2px solid white   ">Exemple</td>
+                    <td style="padding: 3px;border-right: 1px solid white">Bitcoin</td>
+                    <td style="padding: 3px;border-right: 1px solid white">Hyperledger</td>
+                    <td style="padding: 3px;border-right: 1px solid white">Quorum</td>
+                </tr>
+            </table>
+        </div>
+        <p>
+            <strong>Point clé : </strong> <br>
+            Le choix du type de blockchain dépend des besoins spécifiques de l'organisation ou de l'individu. <br>
+            Par exemple, une organisation qui a besoin de transparence totale pourrait opter pour une blockchain
+            publique,
+            tandis qu'une organisation qui a besoin de plus de contrôle et de confidentialité pourrait opter pour une
+            blockchain privée.
+        </p>
+
+        <p>
+            <strong>Conclusion : </strong> <br>
+            Comprendre les différents types de blockchain est crucial pour faire un choix éclairé. Chaque type de
+            blockchain a ses avantages et ses inconvénients, et il est important de considérer ces facteurs en fonction
+            de ce que l'on cherche à réaliser avec la technologie de la blockchain.
+
+        </p>
+
+    </div>
+
+    <!--  #endregion :  P4 | Types de Blockchain, publique, privée, consortium -->
+
+    <!--  #region P5 | Activité pratique, Recherche et présentation sur les utilisations actuelles de la Blockchain -->
+
+    <div class="slide">
+        <div class="center-slide">
+            <h2>Atelier</h2>
+        </div>
+
+        <p>
+            <strong>Exercice P5.1bis C107 - Technologie Blockchain </strong>
+        </p>
+
+
+        <p>
+            <strong>Objectif : </strong> Comprendre comment différentes entreprises utilisent la blockchain pour
+            résoudre des problèmes spécifiques.
+        </p>
+
+        <p>
+            <strong>
+                Entreprises :
+            </strong> Bitcoin, Ethereum, Ripple, IBM Blockchain, De Beers
+
+        </p>
+
+        <p>
+            <strong>
+                Consignes :
+            </strong>
+            Pour chaque entreprise, recherchez et expliquez :
+            Le problème spécifique que l'entreprise cherche à résoudre avec la blockchain.
+            Comment la blockchain aide à résoudre ce problème.
+            Les avantages de l'utilisation de la blockchain par rapport aux méthodes traditionnelles.
+        </p>
+
+        <p><strong>Date : 22 juin 2023</strong></p>
+
+        <br>
+        <a style="margin-left: 50px;" target="_blank" href="../p5-Atelier/C-P5.1Bis-Devoir_Recherche_Blockchain.pdf">
+            Télécharger le PDF
+        </a>
+        <br>
+        <br>
+        <a style="margin-left: 50px; color: red;" target="_blank"
+            href="../p5-Atelier/XC-P5.1Bis-Devoir_Recherche_Blockchain.pdf">
+            Télécharger le corrigé
+        </a>
+    </div>
+
+    <!-- #endregion -->
+
+    <div class="slide" style="background-color: black;">
+        <h1 style="position: relative; top:25vh;">The end</h1>
+        <h2 style="position: relative; top:25vh; text-align: center;">Merci de votre attention :-)</h2>
+        <h3 style="position: relative; top:25vh; text-align: center; color: #F0E68C;">
+            "La blockchain, c'est comme une fête à laquelle tout le monde est invité, mais où personne ne sait qui est l'hôte !"
+        </h3>
+    </div>
+    
+
+    <footer>
+        ETML / CFPV | module 107 Mettre en œuvre des solutions ICT avec la technologie blockchain |
+        <strong style="color: var(--backgroundColorSlide);">
+            <span id="page"> </span>
+        </strong>
+        <span id='horloge' style="position: fixed; bottom: 5px; right: 30px;"></span>
+
+    </footer>
+</body>
+
+</html>

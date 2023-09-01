@@ -1,0 +1,261 @@
+/* Règles de base pour les smartphones */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+/* Styles pour l'en-tête */
+header {
+    position: relative;
+    top: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 1px;
+    text-align: center;
+    line-height: 1.0;
+}
+
+header h1 {
+    font-size: x-large;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: large;
+    margin: 1px;
+}
+
+/* Styles pour la navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #667;
+    padding: 6px;
+    height: 16px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Styles pour la balise <main> */
+main {
+    padding: 5px;
+    /* Ajouter une marge de 5 pixels autour de la balise <main> */
+    overflow-y: auto;
+    /* pour activer la barre de défilement si le contenu déborde */
+}
+
+/* Styles pour la balise <iframe> */
+#slidesContainer {
+    width: calc(100% - 10px);
+    /* Remplir toute la largeur moins 10 pixels de marge */
+    height: calc(100% - 10px);
+    /* Remplir toute la hauteur moins 10 pixels de marge */
+    border: none;
+    /* Supprimer la bordure de l'iframe */
+    object-fit: contain;
+    /* Forcer le contenu à s'afficher complètement */
+}
+
+#simulateKeyPrev,
+#simulateKeyNext {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 9999; 
+    background: rgba(128, 128, 128, 0.5); 
+    color: white; 
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#simulateKeyPrev {
+    right: 80px; 
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+/* Style pour la liste non ordonnée (ul) */
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+/* Style pour les éléments de la liste (li) */
+li {
+    width: 150px;
+    height: 150px;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    /* Nécessaire pour la rotation */
+    position: relative;
+    /* Masquer le contenu qui dépasse */
+    overflow: hidden;
+    /* Animation de transition pour la rotation */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animation de rotation lorsque survolé */
+li:hover {
+    transform: rotate(360deg);
+}
+
+/* Animation de changement de couleur */
+@keyframes changeColor {
+    0% {
+        background-color: #f0f0f0;
+    }
+
+    50% {
+        background-color: #ffc107;
+    }
+
+    100% {
+        background-color: #f0f0f0;
+    }
+}
+
+/* Appliquer l'animation de changement de couleur */
+li:nth-child(even):hover {
+    animation: changeColor 1s ease-in-out;
+}
+
+/* Nouveau style pour le formulaire de connexion */
+#login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 400px;
+    margin: 25px auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
+    /* Ajout d'une légère ombre */
+}
+
+#login img {
+    width: 270px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+#login h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+#login label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#login input[type="text"],
+#login input[type="password"] {
+    width: 92%;
+    padding: 10px;
+    margin: 5px 0;
+    /* Espacement entre les champs pour les smartphones */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Nouveau style pour le bouton de connexion */
+#login input[type="submit"] {
+    position: relative;
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+    float: right;
+}
+
+#login input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style pour le lien "Mot de passe oublié" */
+#login a {
+    text-decoration: none;
+    color: #007bff;
+    margin-top: 8px;
+    /* Ajout d'une marge pour séparer le lien du bouton */
+}
+
+#login a:hover {
+    text-decoration: underline;
+}
+
+/* Style pour les messages d'erreur */
+#login .error {
+    color: red;
+    margin-top: 12px;
+    /* Ajout d'une marge pour séparer les messages d'erreur */
+}
+
+
+/* Styles pour le pied de page */
+footer {
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+}
+
+footer p{
+    margin-bottom: 5px;
+}
+
+/* Styles pour les liens */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Media query pour les smartphones */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: large;
+    }
+
+    header p {
+        font-size: small;
+    }
+
+    #login h2 {
+        font-size: 20px;
+    }
+}
